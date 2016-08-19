@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="/professional_profile">My Profile</a></li>
+				<li><a href="/session" data-method="delete">Logout</a></li>
+			</ul>
+		</div>
+		<h2>Users you may want to connect with:</h2>
+		<table class="table table-striped">
+			<thead>
+				<th>Name</th>
+				<th>Action</th>
+			</thead>
+			<tbody>
+				<%if @all_except%>
+					<%@all_except.each do |user|%>
+						<tr>
+							<td><%=user.name%></td>
+							<td><a href="/invites/<%=user.id%>" data-method="post">Connect</a></td>
+						</tr>
+					<%end%>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

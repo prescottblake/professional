@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Professional Profile</title>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="navbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="/users">All Users</a></li>
+				<li><a href="/session" data-method="delete">Logout</a></li>
+			</ul>
+		</div>
+		<h2>Hi <%= @user.name%>!</h2>
+		<div>
+			<h4>Here is your profile description:</h4>
+			<div>
+				<textarea rows="5" cols="30" readonly><%=@user.description%></textarea>
+			</div>
+		</div>
+		<div>
+			<h4>Your Professional Network:</h4>
+			<div class="scrollBox">
+				<%@friends.each do |friend|%>
+					<p><a href="/user/<%=friend.id%>"><%=friend.name%></a></p>
+				<%end%>
+			</div>
+		</div>
+		<div>
+			<h4>Invitations:</h4>
+			<div class="scrollBox">
+				<table class="table table-striped">
+					<thead>
+						<th>Name</th>
+						<th>Action</th>
+					</thead>
+					<tbody>
+						<%@invites.each do |invite|%>
+							<tr>
+								<td><%=invite.invitee.name%></td>
+								<td>
+									<a href="/networks/<%=invite.invitee.id%>" data-method="post">Accept Invite</a>
+									<a href="/invites/<%=invite.id%>" data-method = "delete">Ignore</a>
+								</td>
+							</tr>
+						<%end%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

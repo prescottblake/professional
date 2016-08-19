@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login/Registration</title>
+</head>
+<body>
+	<h1>Welcome!</h1>
+	<div>
+		<form action="/users" method="post">
+		<input name="authenticity_token" type="hidden" value="token_value"/>
+			<label>Name
+				<input type="text" name="user[name]">
+			</label>
+			<label>Email
+				<input type="text" name="user[email]">
+			</label>
+			<label>Password
+				<input type="password" name="user[password]">
+			</label>
+			<label>Confirm Password
+				<input type="password" name="user[password_confirm]">
+			</label>
+			<label>Description
+				<textarea name="user[description]"></textarea>
+			</label>
+		</form>
+	</div>
+</body>
+</html>

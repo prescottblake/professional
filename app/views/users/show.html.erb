@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=@target.name%></title>
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="/professional_profile">My Profile</a></li>
+				<li><a href="/session" data-method="delete">Logout</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2><%=@target.name%></h2>
+			<p>Description: <%=@target.description%></p>
+		</div>
+	</div>
+</body>
+</html>
+

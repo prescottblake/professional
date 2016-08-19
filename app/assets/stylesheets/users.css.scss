@@ -1,0 +1,27 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+label{
+	display: inline-block;
+	float:left;
+	clear: left;
+	width: 100px;
+	text-align: left;
+}
+.formBox{
+	display: inline-block;
+	vertical-align:top;
+	margin-right: 50px;
+	outline: 1px solid darkgrey;
+	padding: 10px;
+}
+.scrollBox{
+	height: 200px;
+	width: 300px;
+	overflow: hidden;
+	overflow-y: scroll;
+	outline: 1px solid grey;
+}
+
